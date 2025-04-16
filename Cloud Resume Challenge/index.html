@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Beginner Resume</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <main class="resume">
+    <button id="darkToggle" aria-label="Toggle Dark Mode">🌙</button>
+    <section class="header">
+      <img src="/images/heashot.png" alt="Headshot" class="headshot" />
+      <h1>Aakash Patel</h1>
+      <p>Email: paakash2024@gmail.com | Phone: 908-279-4125</p> <br>
+      <div class="view-counter">
+        <span class="counter-number">Views: Loading...</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Employment History</h2>
+      <ul class="timeline">
+        <li class="job" data-role="job1">
+          <div class="job-header">
+            <span class="job-title">Job 1</span>
+            <span class="arrow">&#9662;</span>
+          </div>
+          <ul class="details hidden" id="job1">
+            <li>Built EC2 and S3 solutions using AWS Console & CLI.</li>
+            <li>Configured IAM policies and bucket permissions.</li>
+            <li>Hands-on VPC + Security Groups labs.</li>
+          </ul>
+        </li>
+        <li class="job" data-role="job2">
+          <div class="job-header">
+            <span class="job-title">Job 2</span>
+            <span class="arrow">&#9662;</span>
+          </div>
+          <ul class="details hidden" id="job2">
+            <li>Supported staff with cloud logins & MFA setups.</li>
+            <li>Logged incidents and collaborated with sysadmins.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Education</h2>
+      <p>B.S. Information Technology, Tech University (2020 - 2024)</p>
+    </section>
+
+    <section class="card">
+      <h2>Skills & Certifications</h2>
+      <ul class="skills">
+        <li>AWS Certified Solutions Architect – Associate</li>
+        <li>EC2, S3, IAM, Lambda, CloudWatch</li>
+        <li>Linux, CLI, Git, Basic Python</li>
+        <li>Teraform, SQL, Docker, Kubernetes, Linux</li>
+      </ul>
+    </section>
+
+    <section class="card contact">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    async function getViewCount() {
+      try {
+        const response = await fetch("https://c6wtjcbh2ibdi4oi3m7t36h4jm0twtjq.lambda-url.us-east-1.on.aws/");
+        const data = await response.json();
+        document.querySelector('.counter-number').textContent = `Views: ${data.views}`;
+      } catch (error) {
+        console.error('Error fetching view count:', error);
+      }
+    }
+  
+    // Call it on page load
+    getViewCount();
+  </script>
+</body>
+</html>

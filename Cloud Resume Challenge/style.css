@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f0f4f8;
+    color: #1f2937;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  body.dark-mode {
+    background: #1e293b;
+    color: #f8fafc;
+  }
+  
+  .resume {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    position:relative
+  }
+  
+  #darkToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .view-counter {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-left: 8px;
+  }
+  
+  body.dark-mode .view-counter {
+    background-color: #3b82f6;
+  }
+  
+  body.dark-mode .view-counter {
+    background-color: #3b82f6;
+  }
+
+  
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .headshot {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+  }
+  
+  body.dark-mode h2 {
+    color: #93c5fd;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, background 0.3s, color 0.3s;
+  }
+  
+  body.dark-mode .card {
+    background: #334155;
+    color: #f1f5f9;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .timeline {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .job {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    background: #f9fafb;
+    transition: background 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  body.dark-mode .job {
+    background: #475569;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+  }
+  
+  .job:hover,
+  .active-job {
+    background-color: #e0e7ff;
+  }
+  
+  body.dark-mode .job:hover,
+  body.dark-mode .active-job {
+    background-color: #64748b;
+  }
+  
+  .job-title {
+    font-weight: 600;
+  }
+  
+  .arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate {
+    transform: rotate(180deg);
+  }
+  
+  .details {
+    padding: 0 1.2rem 1rem 1.2rem;
+    font-size: 0.95rem;
+    color: #374151;
+    animation: slideDown 0.3s ease;
+  }
+  
+  body.dark-mode .details {
+    color: #e2e8f0;
+  }
+  
+  .details li {
+    margin-bottom: 0.4rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .skills {
+    padding-left: 1rem;
+  }
+  
+  .skills li {
+    margin-bottom: 0.5rem;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Contact Form */
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact label {
+    font-weight: 600;
+  }
+  
+  .contact input,
+  .contact textarea {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+  }
+  
+  .contact button {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .contact button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  body.dark-mode .contact input,
+  body.dark-mode .contact textarea {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    border: 1px solid #475569;
+  }
+  
+  body.dark-mode .contact button {
+    background-color: #3b82f6;
+  }
+  
+  @media (max-width: 600px) {
+    .resume {
+      padding: 1rem;
+    }
+  
+    .job-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+    }
+  }
